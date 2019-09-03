@@ -1,0 +1,22 @@
+{
+  "name": "notes_app",
+  "version": "1.0.0",
+  "description": "**Code is in a file called note-model.js. **Code is wrapped in the module pattern. **Uses the constructor and prototype pattern to define a note model object that can be instantiated. **Takes the text of a note upon instantiation e.g. My favourite language is JavaScript. **Stores the text in a text property on the note. **Has a method that will return the note text.",
+  "main": "assert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuyCalloway/notes_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuyCalloway/notes_app/issues"
+  },
+  "homepage": "https://github.com/GuyCalloway/notes_app#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
