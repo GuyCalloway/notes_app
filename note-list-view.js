@@ -6,11 +6,18 @@
         NotesListView.prototype.view = function(){
          var start = "<ul>"
          var end = "</ul>" 
-         if (this.notelist.noteArray.length == 0) {
+         var noteArray = this.notelist.noteArray
+
+         var filtered = noteArray.filter(function (el) {
+            return el.text != "";
+          });
+          console.log(filtered)
+         if (noteArray.length == 0) {
              return "<div><li>No Notes</li></div>";
          } else {
-         var content = this.notelist.noteArray.map(function(note){return "<li><div>" + note.text + "</div></li>"});
-          console.log(content)
+         var content = filtered.map(function(note){
+             return "<li><div>" + note.text + "</div></li>"});
+
          content = content.reduce((a, b) => a + b, "");
         
          return (start + content + end);
