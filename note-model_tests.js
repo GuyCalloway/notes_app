@@ -43,7 +43,7 @@ var counter = 0;
     // notesList.create("text1");
     // notesList.create("text2");
     notesView = new NotesListView(notesList);
-    assert.isTrue(notesView.view() == "<div><li>No Notes</li></div>");
+    assert.isTrue(notesView.view() == "<li><div>No Notes</div></li>");
   
   }
 

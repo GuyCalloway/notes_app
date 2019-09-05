@@ -2,15 +2,15 @@
 // element.innerHTML = "yo";
 
 var notelist = new NotesList()
+var element = document.getElementById("app");
+element.innerHTML = "<h3><div>No Notes</div></h3>"
 
 document.getElementById('create_button').onclick = function(){
     const textarea = document.getElementById('note_input');
-    
-    console.log("first console", notelist)
-    
-    var controller = new Controller(notelist, textarea.value);
-    console.log("second console", notelist)
+
+    var controller = new Controller(notelist, textarea.value);   
     var html1 = controller.render();
+    console.log(html1)
     var element = document.getElementById("app");
     element.innerHTML = html1
     textarea.value = ""
@@ -23,6 +23,18 @@ document.getElementById('create_button').onclick = function(){
 //     // textarea.value = '';
 };
 
+
+document.getElementById('important').onclick = function(){
+    const textarea = document.getElementById('note_input');
+    var controller = new Controller(notelist, textarea.value);   
+    var html1 = controller.render();
+    console.log(html1)
+    var element = document.getElementById("app");
+    element.innerHTML = html1
+    textarea.value = ""
+
+
+};
 
 
 

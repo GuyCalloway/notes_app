@@ -10,5 +10,10 @@
         NotesList.prototype.list = function() {
             return this.noteArray
         }
+
+      //   NotesList.prototype.reOrder = function() {
+      //      this.noteArray.pop
+      //      this.n
+      // }
         exports.NotesList = NotesList;
 })(this);

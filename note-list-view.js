@@ -1,28 +1,32 @@
 (function(exports){
+
     function NotesListView(notelist) {
-            this.notelist = notelist
-        };
+        this.notelist = notelist
+    };
 
-        NotesListView.prototype.view = function(){
-         var start = "<ul>"
-         var end = "</ul>" 
-         var noteArray = this.notelist.noteArray
+    NotesListView.prototype.view = function(){
+    
+        var noteArray = this.notelist.noteArray
 
-         var filtered = noteArray.filter(function (el) {
-            return el.text != "";
-          });
-          console.log(filtered)
-         if (noteArray.length == 0) {
-             return "<div><li>No Notes</li></div>";
-         } else {
-         var content = filtered.map(function(note){
-             return "<li><div>" + note.text + "</div></li>"});
-
-         content = content.reduce((a, b) => a + b, "");
+        var filteredArray = noteArray.filter(function (noteObject) {
+        return noteObject.text != "";
+        });
         
-         return (start + content + end);
-         }
-        };
+       
+        var content = filteredArray.map(function(noteObject){
+            var liTag = document.createElement("div");
+            var divTag = document.createElement("li");
+            divTag.innerText = noteObject.text;
+            liTag.appendChild(divTag);
+            return liTag;
+        })
 
-        exports.NotesListView = NotesListView;
-    })(this);
+        var ulTag = document.createElement("ul")
+        content = content.reduce((a, b) => a + b.outerHTML, "");
+        return ulTag.innerText = content
+    
+    };
+
+    exports.NotesListView = NotesListView;
+})(this);
+
