@@ -1,6 +1,6 @@
 <html>
   <head>
-      <h1>list of NOTES</h1>
+      <h1 id="para">list of NOTES</h1>
       <script src="assert.js"></script>
       <script src="note-model.js"></script>
       <script src="note-list-model.js"></script>
@@ -16,10 +16,14 @@
       <label for="note">Enter your note</label>
       <textarea name="note" id="note_input" cols="30" rows="10"></textarea>
       <button id="create_button">SAVE</button>
-      <button id="important">SAVE</button>
-     
-      <script src="note-controller.js"></script>
+ 
+
     <!-- <div id="notes"><div> -->
+        <textarea name="note" id="no_input" cols="2" rows="2"></textarea>
+        <button id="starred">importantONE enter number</button>
+
+        <script src="note-controller.js"></script>
+        <ol id="linksList"></ol>
   </body>
       
 </html>

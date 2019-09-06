@@ -7,6 +7,10 @@
           this.noteArray.push(new Note(text));
         }
 
+        NotesList.prototype.createImportant = function(text){
+          this.noteArray.unshift(new Note(text));
+        }
+
         NotesList.prototype.list = function() {
             return this.noteArray
         }

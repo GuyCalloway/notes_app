@@ -14,14 +14,14 @@
         
        
         var content = filteredArray.map(function(noteObject){
-            var liTag = document.createElement("div");
-            var divTag = document.createElement("li");
-            divTag.innerText = noteObject.text;
-            liTag.appendChild(divTag);
+            var liTag = document.createElement("li");
+            
+            liTag.innerText = noteObject.text;
             return liTag;
         })
 
-        var ulTag = document.createElement("ul")
+        var ulTag = document.createElement("ol").type = "1";
+        console.log(ulTag)
         content = content.reduce((a, b) => a + b.outerHTML, "");
         return ulTag.innerText = content
     
